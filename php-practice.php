@@ -2,8 +2,10 @@
 
 $message = "bringus brungussy";
 
-echo $message;
+// echo $message;
 
 $pi = 3.14;
 
-echo $pi * 2;
+var_dump($message);
+var_dump($pi);
+
