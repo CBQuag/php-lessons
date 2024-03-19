@@ -1,5 +1,6 @@
 <?php
 
+
 $message = "bringus brungussy";
 
 // echo $message;
@@ -88,3 +89,21 @@ switch ($day) {
 
 //without breaks, switches run everything past the true condition
 echo '</br>';
+
+echo '<h1>html stuff</h1></br>';
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>better to close the php</h1>
+    <p>you can add variables like <?php echo $message; ?></p>
+</body>
+</html>
