@@ -6,6 +6,7 @@ $message = "bringus brungussy";
 
 $pi = 3.14;
 
-var_dump($message);
-var_dump($pi);
+$pi *= 3;
+
+var_dump($message, $pi);
 
