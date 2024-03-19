@@ -105,5 +105,26 @@ echo '<h1>html stuff</h1></br>';
 <body>
     <h1>better to close the php</h1>
     <p>you can add variables like <?php echo $message; ?></p>
+    <p>there's a shorter echo method that looks like <?= 'this' ?></p>
+
+    <?php if ($day == 'tue'): ?>
+                                        it's tuesday
+    <?php elseif ($day == 'fri'): ?>
+                                        it's friday
+    <?php endif; ?>
+    <!--
+
+    you can also do the same with loops and things-->
+
+    <ul>
+        
+        <?php foreach ($people_single as $p): ?>
+                <li>
+                    <h2><?= $p['name'] ?></h2>
+                    <p>age: <?= $p['age'] ?></p>
+                </li>
+        <?php endforeach ?>
+    </ul>
+    <!-- similar to react -->
 </body>
 </html>
