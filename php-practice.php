@@ -30,6 +30,26 @@ $sally = [
 $people = [$bob, $sally];
 echo $people[0]['age'];
 
+$people_single = [
+    'sally' => ['name' => 'sally', 'age' => 32],
+    'bob' => ['name' => 'bob', 'age' => 20]
+];
+echo $people_single['sally']['name'];
+echo '</br>';
+
+//kinda works like objects
+
+foreach ($people_single as $p) {
+    echo $p['name'] . '</br>';
+}
+
+//using index
+foreach ($people_single as $key => $p) {
+    echo $key . '-' . $p['age'] . '</br>';
+}
+
 var_dump($message, $pi);
+echo '</br>';
 var_dump($arr["blurst"]);
+echo '</br>';
 
