@@ -14,7 +14,7 @@ if (mysqli_connect_error()) {
 
 $sql = "SELECT * 
         FROM  article
-        WHERE id=1";
+        WHERE id=". $_GET['id'];
 
 $results = mysqli_query($conn, $sql);
 
@@ -24,6 +24,7 @@ if ($results === false) {
     $article = mysqli_fetch_assoc($results);
     var_dump($article);
 }
+
 
 ?>
 
@@ -39,14 +40,14 @@ if ($results === false) {
     <h1>Blog</h1>
 
     <?php if (empty ($article)): ?>
-            <p>No articles found.</p>
+        <p>No articles found.</p>
     <?php else: ?>
-            <ul>
+        <ul>
 
-                <h3> <?= $article["title"]; ?> </h3>
-                <p> <?= $article["content"]; ?></p>
+            <h3> <?= $article["title"]; ?> </h3>
+            <p> <?= $article["content"]; ?></p>
 
-            </ul>
+        </ul>
     <?php endif; ?>
 </body>
 </html>
