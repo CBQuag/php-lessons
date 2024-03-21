@@ -14,15 +14,15 @@ if (mysqli_connect_error()) {
 
 $sql = "SELECT * 
         FROM  article
-        WHERE id=". $_GET['id'];
+        ORDER BY published_at;";
 
 $results = mysqli_query($conn, $sql);
 
 if ($results === false) {
     echo mysqli_error($conn);
 } else {
-    $article = mysqli_fetch_assoc($results);
-    var_dump($article);
+    $articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
+    var_dump($articles);
 }
 
 
@@ -39,14 +39,16 @@ if ($results === false) {
 <body>
     <h1>Blog</h1>
 
-    <?php if (empty ($article)): ?>
+    <?php if (empty ($articles)): ?>
         <p>No articles found.</p>
     <?php else: ?>
         <ul>
-
-            <h3> <?= $article["title"]; ?> </h3>
-            <p> <?= $article["content"]; ?></p>
-
+            <?php foreach ($articles as $art): ?>
+            <li>
+            <h3> <a href="/query-string-practice.php?id=<?=$art["id"]?>"><?= $art["title"]; ?></a> </h3>
+            <p> <?= $art["content"]; ?></p>
+            </li>
+            <?php endforeach; ?>
         </ul>
     <?php endif; ?>
 </body>
