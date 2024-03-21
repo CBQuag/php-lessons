@@ -11,19 +11,18 @@ if (mysqli_connect_error()) {
     echo mysqli_connect_error();
     exit;
 }
-echo 'bringus';
 
 $sql = "SELECT * 
         FROM  article
-        ORDER BY published_at;";
+        WHERE id=1";
 
 $results = mysqli_query($conn, $sql);
 
 if ($results === false) {
     echo mysqli_error($conn);
 } else {
-    $articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
-    var_dump($articles);
+    $article = mysqli_fetch_assoc($results);
+    var_dump($article);
 }
 
 ?>
@@ -39,13 +38,15 @@ if ($results === false) {
 <body>
     <h1>Blog</h1>
 
-    <ul>
-        <?php foreach($articles as $art): ?>
-            <li>
-                <h3> <?= $art['title']; ?> </h3>
-                <p> <?= $art['content']; ?></p>
-            </li>
-            <?php endforeach ?>
-    </ul>
+    <?php if (empty ($article)): ?>
+            <p>No articles found.</p>
+    <?php else: ?>
+            <ul>
+
+                <h3> <?= $article["title"]; ?> </h3>
+                <p> <?= $article["content"]; ?></p>
+
+            </ul>
+    <?php endif; ?>
 </body>
 </html>
