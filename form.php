@@ -29,11 +29,23 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 </optgroup>
 <optgroup label="America">
-<option value="us">United States</option>
+<option value="us" selected>United States</option>
 <option value="mexico">Mexico</option>
 </optgroup>
 
 </select>
+
+<div>
+    agree? <input type="checkbox" name="terms" >
+</div>
+
+<div><input type="checkbox" name="colors[]">blue</div>
+<div><input type="checkbox" name="colors[]">red</div>
+<button>send</button>
+
+
+<label for="title">Title</label>
+<input id="title" name="article title">
 
 </form>
     
