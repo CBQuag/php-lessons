@@ -15,10 +15,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <body>
 <!-- default method is get -->
 <form method="post">
+<fieldset >
+    <legend>login</legend>
     <input name="username">
     <input name="password" type="password">
 
     <button>Send</button>
+</fieldset>
 
     <br/>
 
@@ -46,6 +49,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 <label for="title">Title</label>
 <input id="title" name="article title">
+
+
+<input type="checkbox" id="agree">
+<label for="agree">Agree</label>
+
+
+<label><input type="checkbox">better agree</label>
 
 </form>
     
