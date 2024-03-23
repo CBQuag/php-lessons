@@ -19,6 +19,22 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <input name="password" type="password">
 
     <button>Send</button>
+
+    <br/>
+
+    <select name="country" >
+    <optgroup label="Europe">
+        <option value="germany">Germany</option>
+        <option value="france">France</option>
+
+</optgroup>
+<optgroup label="America">
+<option value="us">United States</option>
+<option value="mexico">Mexico</option>
+</optgroup>
+
+</select>
+
 </form>
     
 </body>
