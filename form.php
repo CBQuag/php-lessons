@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <legend>login</legend>
     <input name="username">
     <input name="password" type="password">
-
+<!-- readonly attribute prevents changing. could be good for a review or something -->
     <button>Send</button>
 </fieldset>
 
@@ -41,6 +41,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <div>
     agree? <input type="checkbox" name="terms" >
 </div>
+
+<input type="textarea">
 
 <div><input type="checkbox" name="colors[]">blue</div>
 <div><input type="checkbox" name="colors[]">red</div>
